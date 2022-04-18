@@ -5,7 +5,20 @@ const router = createRouter({
   // 指定路由的模式,此处使用的是hash模式
   history: createWebHashHistory(),
   // 路由地址
-  routes: []
+  routes: [
+    {
+      path: '/',
+      name: 'Index',
+      meta: { title: 'Index' },
+      redirect: '/home'
+    },
+    {
+      path: '/home',
+      name: 'Home',
+      meta: { title: 'Home' },
+      component: () => import('../views/home/home.vue')
+    }
+  ]
 })
 
 export default router
